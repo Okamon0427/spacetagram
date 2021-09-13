@@ -1,23 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Container, Grid } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import Image from './Image';
+import SpaceImages from './SpaceImages';
 
 const initialImages = [
   {
     title: 'Hello',
     explanation: 'I am good',
-    hdurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1200px-The_Earth_seen_from_Apollo_17.jpg'
+    hdurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1200px-The_Earth_seen_from_Apollo_17.jpg',
+    date: '2021-09-11'
   },
   {
     title: 'Good Afternoon',
     explanation: 'I am so-so',
-    hdurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1200px-The_Earth_seen_from_Apollo_17.jpg'
+    hdurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1200px-The_Earth_seen_from_Apollo_17.jpg',
+    date: '2021-09-11'
   },
   {
     title: 'Good Evening',
     explanation: 'I am exited',
-    hdurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1200px-The_Earth_seen_from_Apollo_17.jpg'
+    hdurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1200px-The_Earth_seen_from_Apollo_17.jpg',
+    date: '2021-09-11'
   }
 ];
 
@@ -30,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function Landing() {
+const Landing = () => {
   const classes = useStyles();
   const [images, setImages] = useState(initialImages);
 
@@ -42,13 +45,7 @@ function Landing() {
     <Container>
       <div className={classes.root}>
         <Grid container spacing={3}>
-          {images.map((image, index) => {
-            return (
-              <Grid key={index} item xs={6} sm={3}>
-                <Image image={image} />
-              </Grid>
-            );
-          })}
+          <SpaceImages images={images} />
         </Grid>
       </div>
     </Container>

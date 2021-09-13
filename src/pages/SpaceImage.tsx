@@ -16,7 +16,7 @@ interface Props {
   image: any;
 }
 
-export default function MediaCard({ image }: Props) {
+const SpaceImage = ({ image }: Props) => {
   const classes = useStyles();
   const [isLiked, toggleIsLiked] = useState(false);
 
@@ -29,11 +29,14 @@ export default function MediaCard({ image }: Props) {
       <CardMedia
         className={classes.media}
         image={image.hdurl}
-        title="Contemplative Reptile"
+        title={image.title}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {image.title}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {image.date}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
           {image.explanation}
@@ -51,3 +54,5 @@ export default function MediaCard({ image }: Props) {
     </Card>
   );
 }
+
+export default SpaceImage;
