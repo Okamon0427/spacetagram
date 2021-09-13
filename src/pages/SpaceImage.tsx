@@ -28,18 +28,15 @@ const SpaceImage = ({ image }: Props) => {
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image={image.hdurl}
-        title={image.title}
+        image={image.img_src}
+        title={image.rover.name}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          {image.title}
+          {image.rover.name} rover - {image.camera.full_name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {image.date}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {image.explanation}
+          {image.earth_date}
         </Typography>
       </CardContent>
       <CardActions>
