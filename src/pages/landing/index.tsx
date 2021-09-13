@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Container, Grid } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import SpaceImages from './SpaceImages';
 import Loading from '../../components/Loading';
+import { API } from '../../constants';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,23 +18,23 @@ const Landing = () => {
   const classes = useStyles();
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const fetchData = async () => {
     try {
+      setIsError(false);
       setIsLoading(true);
 
       const res = await fetch(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=1&api_key=${process.env.REACT_APP_NASA_KEY}`
+        `${API.MARS_PHOTOS}?sol=1000&page=1&api_key=${process.env.REACT_APP_NASA_KEY}`
       );
       const data = await res.json();
 
       setImages(data.photos);
       setIsLoading(false);
-  
-      console.log(data.photos); // delete later
     } catch (err) {
-      // Write some codes
       setIsLoading(false);
+      setIsError(true);
     }
   }
 
@@ -46,9 +47,13 @@ const Landing = () => {
   return (
     <Container>
       <div className={classes.root}>
-        <Grid container spacing={3}>
+        {isError ? (
+          <Typography variant="h5" component="h2">
+            Something went wrong. Please try again.
+          </Typography>
+        ) : (
           <SpaceImages images={images} />
-        </Grid>
+        )}
       </div>
     </Container>
   );

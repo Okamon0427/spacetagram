@@ -1,6 +1,7 @@
 import { Button, Container, Typography } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import { URL } from '../../constants';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,7 +20,7 @@ const NotFound = () => {
         <Typography variant="h4">
           Page Not Found
         </Typography>
-        <Link to='/'>
+        <Link to={URL.LANDING}>
           <Button color="primary">
             Go to landing page
           </Button>

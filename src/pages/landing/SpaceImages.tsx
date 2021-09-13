@@ -7,13 +7,15 @@ interface Props {
 
 const SpaceImages = ({ images }: Props ) => {
   return (
-    images.map((image: any, index: number) => {
-      return (
-        <Grid key={index} item xs={6} sm={3}>
-          <SpaceImage image={image} />
-        </Grid>
-      );
-    })
+    <Grid container spacing={3}>
+      {images.map((image: any, index: number) => {
+        return (
+          <Grid key={index} item xs={6} sm={3}>
+            <SpaceImage image={image} />
+          </Grid>
+        );
+      })}
+    </Grid>
   )
 }
 
