@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, CardMedia, IconButton, Typography } from '@material-ui/core';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles({
   root: {
@@ -16,6 +18,11 @@ interface Props {
 
 export default function MediaCard({ image }: Props) {
   const classes = useStyles();
+  const [isLiked, toggleIsLiked] = useState(false);
+
+  const handleFavorite = (): void => {
+    toggleIsLiked(!isLiked);
+  }
 
   return (
     <Card className={classes.root}>
@@ -33,12 +40,13 @@ export default function MediaCard({ image }: Props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+        <IconButton
+          aria-label="add to favorites"
+          onClick={handleFavorite}
+          color={isLiked ? 'secondary' : 'default'}
+        >
+          <FavoriteIcon />
+        </IconButton>
       </CardActions>
     </Card>
   );
