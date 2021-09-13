@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Container, Grid } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import SpaceImages from './SpaceImages';
+import Loading from '../../components/Loading';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,8 +27,8 @@ const Landing = () => {
       );
       const data = await res.json();
 
-      setIsLoading(false);
       setImages(data.photos);
+      setIsLoading(false);
   
       console.log(data.photos); // delete later
     } catch (err) {
@@ -40,7 +41,7 @@ const Landing = () => {
     fetchData();
   }, []);
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <Loading />;
 
   return (
     <Container>
