@@ -1,7 +1,7 @@
 import { Button, Container, Typography } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { URL } from '../../constants';
+import { URL } from '../../utils/constants';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

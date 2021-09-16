@@ -33,7 +33,7 @@ const SpaceImage = ({ image }: Props) => {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          {image.rover.name} rover - {image.camera.full_name}
+          {image.rover?.name} rover - {image.camera?.full_name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
           {image.earth_date}
