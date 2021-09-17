@@ -1,11 +1,12 @@
-import NavBar from './components/NavBar';
+import Layout from './components/Layout';
 import Routes from './routes';
 
-const App = () => {
+const App = () => {  
   return (
     <>
-      <NavBar />
-      <Routes />
+      <Layout>
+        <Routes />
+      </Layout>
     </>
   );
 }

@@ -1,12 +1,13 @@
 import { CircularProgress, Grid, Typography } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { NAVBAR_HEIGHT } from '../utils/constants';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     center: {
       display: 'flex',
       alignItems: 'center',
-      height: 'calc(100vh - 64px)'
+      height: `calc(100vh - ${NAVBAR_HEIGHT})`
     },
     spinner: {
       textAlign: 'center'
