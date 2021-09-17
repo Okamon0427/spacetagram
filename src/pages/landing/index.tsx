@@ -4,6 +4,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import SpaceImages from './SpaceImages';
 import Loading from '../../components/Loading';
 import Pagination from '../../components/Pagination';
+import FloatingButton from '../../components/FloatingButton';
 import Error from '../../components/Error';
 import { API } from '../../utils/constants';
 import { calculatePagination } from '../../utils/functions';
@@ -52,6 +53,10 @@ const Landing = () => {
     }
   }
 
+  const handleScroll = (): void => {
+    window['scrollTo']({ top: 0, behavior: 'smooth' });
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -65,6 +70,7 @@ const Landing = () => {
           <>
             <SpaceImages images={currentImages} />
             <Pagination setCurrentPage={setCurrentPage} totalPages={totalPages} />
+            <FloatingButton handleScroll={handleScroll} />
           </>
         ) : (
           <Error />
