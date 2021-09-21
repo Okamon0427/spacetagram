@@ -6,8 +6,8 @@ Make Commerce Better for Everyone to include the whole entire universe.
 https://spacetagram.vercel.app/
 
 ## Getting Started
-- copy this project into your local machine
-- install npm
+- Copy this project into your local machine
+- Install npm
 ```
 npm install
 ```
@@ -16,7 +16,7 @@ npm install
 ```
 REACT_APP_NASA_KEY=<YOUR_API_KEY>
 ```
-- launch app
+- Launch app
 ```
 npm start
 ```

@@ -7,7 +7,13 @@ const useStyles = makeStyles((theme: Theme) =>
     center: {
       display: 'flex',
       alignItems: 'center',
-      height: `calc(100vh - ${NAVBAR_HEIGHT})`
+      height: `calc(100vh - ${NAVBAR_HEIGHT.MOBILE})`,
+      "@media (min-width: 600px)": {
+        height: `calc(100vh - ${NAVBAR_HEIGHT.PC})`,
+      },
+      '& .MuiTypography-alignCenter': {
+        color: 'white'
+      }
     },
     spinner: {
       textAlign: 'center'
