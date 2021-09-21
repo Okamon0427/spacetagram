@@ -29,7 +29,7 @@ const Landing = () => {
   const [isError, setIsError] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   // eslint-disable-next-line
-  const [imagesPerPage, setImagesPerPage] = useState(40);
+  const [imagesPerPage, setImagesPerPage] = useState(30);
 
   const [currentImages, totalPages] = calculatePagination(currentPage, imagesPerPage, images);
 

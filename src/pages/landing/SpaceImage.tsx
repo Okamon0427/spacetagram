@@ -6,9 +6,10 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    margin: '0 auto'
   },
   media: {
-    height: 140,
+    height: 200,
   },
 });
 

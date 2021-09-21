@@ -7,10 +7,10 @@ interface Props {
 
 const SpaceImages = ({ images }: Props ) => {
   return (
-    <Grid container spacing={3}>
+    <Grid container justify="center" spacing={3}>
       {images?.map((image: any, index: number) => {
         return (
-          <Grid key={index} item xs={12} sm={6}>
+          <Grid key={index} item xs={12} sm={6} md={4} lg={3}>
             <SpaceImage image={image} />
           </Grid>
         );
