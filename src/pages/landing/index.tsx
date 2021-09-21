@@ -33,7 +33,7 @@ const Landing = () => {
 
   const [currentImages, totalPages] = calculatePagination(currentPage, imagesPerPage, images);
 
-  const fetchData = async () => {
+  const fetchData = async (): Promise<any> => {
     try {
       setIsError(false);
       setIsLoading(true);

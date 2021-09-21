@@ -10,7 +10,7 @@ const SpaceImages = ({ images }: Props ) => {
     <Grid container spacing={3}>
       {images?.map((image: any, index: number) => {
         return (
-          <Grid key={index} item xs={6} sm={3}>
+          <Grid key={index} item xs={12} sm={6}>
             <SpaceImage image={image} />
           </Grid>
         );
