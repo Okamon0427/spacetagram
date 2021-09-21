@@ -1,11 +1,15 @@
-import NavBar from './components/NavBar';
+import Layout from './components/Layout';
 import Routes from './routes';
+import MuiColorProvider from './components/Color';
 
-const App = () => {
+const App = () => {  
   return (
     <>
-      <NavBar />
-      <Routes />
+      <MuiColorProvider>
+        <Layout>
+          <Routes />
+        </Layout>
+      </MuiColorProvider>
     </>
   );
 }

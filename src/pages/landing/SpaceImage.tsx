@@ -6,9 +6,16 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    margin: '0 auto',
+    '& .MuiCardContent-root': {
+      paddingBottom: 0
+    },
+    '& .MuiCardActions-root': {
+      paddingTop: 0
+    }
   },
   media: {
-    height: 140,
+    height: 200,
   },
 });
 
@@ -33,7 +40,7 @@ const SpaceImage = ({ image }: Props) => {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          {image.rover.name} rover - {image.camera.full_name}
+          {image.rover?.name} rover - {image.camera?.full_name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
           {image.earth_date}

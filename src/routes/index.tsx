@@ -1,7 +1,7 @@
 import Landing from '../pages/landing';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NotFound from '../pages/notFound';
-import { URL } from '../constants';
+import { URL } from '../utils/constants';
 
 const Routes = () => {
   return (
