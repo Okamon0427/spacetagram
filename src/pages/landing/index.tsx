@@ -43,8 +43,6 @@ const Landing = () => {
       );
       const data = await res.json();
 
-      console.log(data) // delete later
-
       setImages(data.photos);
       setIsLoading(false);
     } catch (err) {
@@ -63,18 +61,20 @@ const Landing = () => {
 
   if (isLoading) return <Loading />;
 
+  const MainContent = () => {
+    return (
+      <>
+        <SpaceImages images={currentImages} />
+        <Pagination setCurrentPage={setCurrentPage} totalPages={totalPages} />
+        <FloatingButton handleScroll={handleScroll} />
+      </>
+    );
+  }
+
   return (
     <Container>
       <div className={classes.root}>
-        {!isError && images?.length > 0 ? (
-          <>
-            <SpaceImages images={currentImages} />
-            <Pagination setCurrentPage={setCurrentPage} totalPages={totalPages} />
-            <FloatingButton handleScroll={handleScroll} />
-          </>
-        ) : (
-          <Error />
-        )}
+        {isError ? <Error /> : <MainContent />}
       </div>
     </Container>
   );
