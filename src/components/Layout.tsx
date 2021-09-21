@@ -6,10 +6,13 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      backgroundColor: COLOR.BACKGROUND
     },
     belowNavBar: {
-      marginTop: NAVBAR_HEIGHT,
-      backgroundColor: COLOR.BACKGROUND
+      marginTop: NAVBAR_HEIGHT.MOBILE,
+      "@media (min-width: 600px)": {
+        marginTop: NAVBAR_HEIGHT.PC
+      }
     }
   }),
 );
