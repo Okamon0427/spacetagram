@@ -6,7 +6,13 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    margin: '0 auto'
+    margin: '0 auto',
+    '& .MuiCardContent-root': {
+      paddingBottom: 0
+    },
+    '& .MuiCardActions-root': {
+      paddingTop: 0
+    }
   },
   media: {
     height: 200,

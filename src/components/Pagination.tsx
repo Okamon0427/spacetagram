@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) =>
       '& > *': {
         marginTop: theme.spacing(2),
       },
+      '& .MuiPaginationItem-page': {
+        color: 'white'
+      }
     },
   }),
 );

@@ -7,3 +7,9 @@ export const API = {
 };
 
 export const NAVBAR_HEIGHT = '64px';
+
+export const COLOR = {
+  PRIMARY: '#00416a',
+  SECONDARY: '#f50057',
+  BACKGROUND: '#15181f'
+}

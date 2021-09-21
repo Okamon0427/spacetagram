@@ -1,6 +1,6 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import NavBar from './NavBar';
-import { NAVBAR_HEIGHT } from '../utils/constants';
+import { NAVBAR_HEIGHT, COLOR } from '../utils/constants';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     belowNavBar: {
-      marginTop: NAVBAR_HEIGHT
+      marginTop: NAVBAR_HEIGHT,
+      backgroundColor: COLOR.BACKGROUND
     }
   }),
 );
